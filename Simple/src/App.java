@@ -1,7 +1,7 @@
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("Hello from partition D.");
+        System.out.println("Hello world!");
     }
 
 }
