@@ -5,6 +5,8 @@
 */.settings/org.eclipse.jdt.core.prefs
 */.settings/org.eclipse.m2e.core.prefs
 
+*/.gradle/4.4.1/fileHashes/fileHashes.lock
+
 # Compiled class file
 *.class
 
