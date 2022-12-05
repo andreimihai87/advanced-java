@@ -1,10 +1,22 @@
 package application;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
-        System.out.println("SQLite");
+        Class.forName("org.sqlite.JDBC");
+        
+        String dbUrl = "jdbc:sqlite:people.db";
+        
+        Connection conn = DriverManager.getConnection(dbUrl);
+        
+        System.out.println(conn);
+        
+        conn.close();
         
     }
 
