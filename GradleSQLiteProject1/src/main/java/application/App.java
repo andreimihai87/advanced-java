@@ -3,6 +3,7 @@ package application;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class App {
 
@@ -14,8 +15,17 @@ public class App {
         
         Connection conn = DriverManager.getConnection(dbUrl);
         
+        Statement statment = conn.createStatement();
+        
+        String sql = "create table if not exists user (id integer primary key, name text not null)";
+        statment.execute(sql);
+        
+//        sql = "drop table user";
+//        statment.execute(sql);
+        
         System.out.println(conn);
         
+        statment.close();
         conn.close();
         
     }
