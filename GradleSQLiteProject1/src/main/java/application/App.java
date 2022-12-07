@@ -21,6 +21,7 @@ public class App {
         Connection conn = DriverManager.getConnection(dbUrl);
 
         Statement statment = conn.createStatement();
+        conn.setAutoCommit(false);
 
         String sql = "create table if not exists user (id integer primary key, name text not null)";
         statment.execute(sql);
@@ -48,7 +49,10 @@ public class App {
 
         sql = "drop table user";
         statment.execute(sql);
+        
+        conn.commit();
 
+        preparedStatement.close();
         statment.close();
         conn.close();
 
